@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     
     include ApplicationHelper
+    include Response
+	  include ExceptionHandler
     before_action :configure_permitted_parameters, if: :devise_controller?
 
     def moon
